@@ -1,0 +1,56 @@
+<div class="container">
+  <div>
+    <h2 class="text-center pt-3 pb-3">Registro de empleados</h2>
+  </div>
+  
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Registro de empleados 
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <form (submit)="agregar()">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="numeroEmpleado" placeholder="10" [(ngModel)]="nuevo.numeroEmpleado" name="numeroEmpleado">
+              <label for="numeroEmpleado">Numero de empleado</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="nombreEmpleado" placeholder="10" [(ngModel)]="nuevo.nombre" name="nombreEmpleado">
+              <label for="nombreEmpleado">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="correoEmpleado" placeholder="10" [(ngModel)]="nuevo.correo" name="correoEmpleado">
+              <label for="correoEmpleado">Correo</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="tel" class="form-control" id="telefonoEmpleado" placeholder="10" [(ngModel)]="nuevo.telefono" name="telefonoEmpleado">
+              <label for="telefonoEmpleado">Teléfono</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="date" class="form-control" id="fechaNacimiento" placeholder="10" [ngModel]="nuevo.fechaNacimiento | date:'yyyy-MM-dd'" (ngModelChange)="nuevo.fechaNacimiento = $event" name="fechaNacimiento">
+              <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" value="F" [(ngModel)]="nuevo.sexo">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Femenino
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault2" value="M" [(ngModel)]="nuevo.sexo">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Masculino
+              </label>
+            </div>
+            <div class="pt-3">
+              <button class="w-100 btn btn-success" type="submit">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

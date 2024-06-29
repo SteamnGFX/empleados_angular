@@ -1,0 +1,29 @@
+<div class="container">
+    <div>
+        <h2 class="text-center pt-3 pb-3">Tabla de empleados</h2>
+    </div>
+    <table class="dark-table w-100" >
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados">
+                    <th scope="row">{{empleado.numeroEmpleado}}</th>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.correo}}</td>
+                    <td>{{empleado.telefono}}</td>
+                    <td>{{empleado.fechaNacimiento}}</td>
+                    <td><button class="btn btn-danger" (click)="eliminarEmpleado(empleado)"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </table>
+</div>
